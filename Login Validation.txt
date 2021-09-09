@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<Html>
+<Head>
+ <Title>
+Login Page(Sessional)
+ </Title> 
+</Head>
+<Body bgcolor="LightGreen">
+<img src="Userprofile.jpg"  align="left"  width="80" height="80">
+<Center> 
+<Font face="Century Schoolbook">
+<H1>
+LOGIN FORM
+</H1><br><br>
+<H3> 
+<Form name="Login" onSubmit="return validation()">
+Username: <input type="text" value="" name="UName"><br><br>
+Password: <input type="Password" value="" name="Pswd"><br>
+<H6>
+<input type="radio" /> Show Password 
+<input type="checkbox" /> Remeber me </H6>
+<input type="Submit" value="Submit" name="Btn"><br><br>
+</Form>
+<P>
+<H5>
+or login with:<br><br>
+<a href="">
+<img src="Google.png"  align="center"  width="150" height="40">
+<img src="Facebook.png"  align="center"  width="150" height="40">
+</a><br><br><br>
+Not Have an Account? 
+<a href=""> SignUp Here </a>
+</H5>
+</P>
+</H3>
+<!--Javascript-->
+<script type="text/javascript">
+function validation() {
+var UName = document.Login.UName.value;
+var Pswd = document.Login.Pswd.value;
+//check empty field
+if(UName=="" || Pswd=="") {
+alert("Fields should not be Blank.");
+return;
+}
+//check size of Password
+if(Pswd.length<8 || Pswd.length>12) {
+alert("Password must be 8 to 12 Characters.");
+return;
+}
+//Username should not start with special characters and numbers.
+var str=UName.slice(0,1);
+if(UName.slice(0,1)=="_" || UName.slice(0,1)=="@" || UName.slice(0,1)=="#" || UName.slice(0,1)=="$" || UName.slice(0,1)=="%" || UName.slice(0,1)=="&" || UName.slice(0,1)=="*" || str.match(/[0-9]/g)!=null)
+{
+alert("Username should not start with special characters and numbers.");
+return;
+}
+}
+</script>
+</Font> 
+</Center>
+</Body>
+</Html>
